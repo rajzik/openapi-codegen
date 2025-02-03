@@ -233,6 +233,15 @@ export const generateReactQueryComponents = async (
                   fetcherFn,
                   url: route,
                   verb,
+                  fetcherOptionsType: f.createIndexedAccessTypeNode(
+                    f.createTypeReferenceNode(
+                      f.createIdentifier(contextTypeName),
+                      undefined
+                    ),
+                    f.createLiteralTypeNode(
+                      f.createStringLiteral("fetcherOptions")
+                    )
+                  ),
                   name: operationQueryFnName,
                 }),
                 ...createQueryHook({
@@ -554,6 +563,12 @@ const createQueryHook = ({
                             f.createIdentifier("queryOptions"),
                             undefined
                           ),
+                          f.createBindingElement(
+                            undefined,
+                            undefined,
+                            f.createIdentifier("fetcherOptions"),
+                            undefined
+                          ),
                         ]),
                         undefined,
                         undefined,
@@ -588,7 +603,10 @@ const createQueryHook = ({
                             f.createCallExpression(
                               f.createIdentifier(operationQueryFnName),
                               undefined,
-                              [f.createIdentifier("variables")]
+                              [
+                                f.createIdentifier("variables"),
+                                f.createIdentifier("fetcherOptions"),
+                              ]
                             )
                           ),
                           f.createSpreadAssignment(

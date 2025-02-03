@@ -109,7 +109,7 @@ describe("generateReactQueryFunctions", () => {
      /**
       * Get all the pets
       */
-     export const listPetsQuery = (variables: ListPetsVariables): {
+     export const listPetsQuery = (variables: ListPetsVariables, fetcherOptions?): {
          queryKey: reactQuery.QueryKey;
          queryFn: ({ signal }: {
              signal?: AbortSignal;
@@ -122,7 +122,7 @@ describe("generateReactQueryFunctions", () => {
          }),
          queryFn: ({ signal }: {
              signal?: AbortSignal;
-         }) => fetchListPets(variables, signal)
+         }) => fetchListPets({ ...fetcherOptions, ...variables }, signal)
      });
 
      export type QueryOperation = {
@@ -242,7 +242,7 @@ describe("generateReactQueryFunctions", () => {
      /**
       * Get all the pets
       */
-     export const listPetsQuery = (variables: ListPetsVariables): {
+     export const listPetsQuery = (variables: ListPetsVariables, fetcherOptions?): {
          queryKey: reactQuery.QueryKey;
          queryFn: ({ signal }: {
              signal?: AbortSignal;
@@ -255,7 +255,7 @@ describe("generateReactQueryFunctions", () => {
          }),
          queryFn: ({ signal }: {
              signal?: AbortSignal;
-         }) => fetchListPets(variables, signal)
+         }) => fetchListPets({ ...fetcherOptions, ...variables }, signal)
      });
 
      export type QueryOperation = {
@@ -357,7 +357,7 @@ describe("generateReactQueryFunctions", () => {
      /**
       * Info for a specific pet
       */
-     export const showPetByIdQuery = (variables: ShowPetByIdVariables): {
+     export const showPetByIdQuery = (variables: ShowPetByIdVariables, fetcherOptions?): {
          queryKey: reactQuery.QueryKey;
          queryFn: ({ signal }: {
              signal?: AbortSignal;
@@ -370,7 +370,7 @@ describe("generateReactQueryFunctions", () => {
          }),
          queryFn: ({ signal }: {
              signal?: AbortSignal;
-         }) => fetchShowPetById(variables, signal)
+         }) => fetchShowPetById({ ...fetcherOptions, ...variables }, signal)
      });
 
      export type QueryOperation = {
@@ -494,7 +494,7 @@ describe("generateReactQueryFunctions", () => {
      /**
       * Get all the pets
       */
-     export const listPetsQuery = (variables: ListPetsVariables): {
+     export const listPetsQuery = (variables: ListPetsVariables, fetcherOptions?): {
          queryKey: reactQuery.QueryKey;
          queryFn: ({ signal }: {
              signal?: AbortSignal;
@@ -507,7 +507,7 @@ describe("generateReactQueryFunctions", () => {
          }),
          queryFn: ({ signal }: {
              signal?: AbortSignal;
-         }) => fetchListPets(variables, signal)
+         }) => fetchListPets({ ...fetcherOptions, ...variables }, signal)
      });
 
      export type QueryOperation = {
@@ -602,7 +602,7 @@ describe("generateReactQueryFunctions", () => {
      /**
       * Get all the pets
       */
-     export const listPetsQuery = (variables: ListPetsVariables): {
+     export const listPetsQuery = (variables: ListPetsVariables, fetcherOptions?): {
          queryKey: reactQuery.QueryKey;
          queryFn: ({ signal }: {
              signal?: AbortSignal;
@@ -615,7 +615,7 @@ describe("generateReactQueryFunctions", () => {
          }),
          queryFn: ({ signal }: {
              signal?: AbortSignal;
-         }) => fetchListPets(variables, signal)
+         }) => fetchListPets({ ...fetcherOptions, ...variables }, signal)
      });
 
      export type QueryOperation = {
@@ -1211,7 +1211,7 @@ describe("generateReactQueryFunctions", () => {
      /**
       * Get all the pets
       */
-     export const listPetsQuery = (variables: ListPetsVariables): {
+     export const listPetsQuery = (variables: ListPetsVariables, fetcherOptions?): {
          queryKey: reactQuery.QueryKey;
          queryFn: ({ signal }: {
              signal?: AbortSignal;
@@ -1224,7 +1224,7 @@ describe("generateReactQueryFunctions", () => {
          }),
          queryFn: ({ signal }: {
              signal?: AbortSignal;
-         }) => fetchListPets(variables, signal)
+         }) => fetchListPets({ ...fetcherOptions, ...variables }, signal)
      });
 
      export type QueryOperation = {
@@ -1306,7 +1306,7 @@ describe("generateReactQueryFunctions", () => {
      /**
       * Get all the pets
       */
-     export const listPetsQuery = (variables: ListPetsVariables): {
+     export const listPetsQuery = (variables: ListPetsVariables, fetcherOptions?): {
          queryKey: reactQuery.QueryKey;
          queryFn: ({ signal }: {
              signal?: AbortSignal;
@@ -1319,7 +1319,7 @@ describe("generateReactQueryFunctions", () => {
          }),
          queryFn: ({ signal }: {
              signal?: AbortSignal;
-         }) => fetchListPets(variables, signal)
+         }) => fetchListPets({ ...fetcherOptions, ...variables }, signal)
      });
 
      export type QueryOperation = {
